@@ -1,7 +1,7 @@
 name: ReactJsWorkflow
 on: [push, workflow_dispatch ]
 jobs:
-  TestJob:
+  Testing:
     runs-on: ubuntu-latest
     steps:
     - name: Clone the repo
@@ -14,7 +14,8 @@ jobs:
       run: npm install
     - name: Creating the Build
       run: npm run build
-  Test2Job:
+  Bulding:
+    needs: Testing
     runs-on: ubuntu-latest
     steps:
     - name: Clone the repo
