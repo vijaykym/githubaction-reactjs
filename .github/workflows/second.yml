@@ -1,0 +1,8 @@
+name: SecondWorkflow
+on: workflow_dispatch
+jobs:
+  TestJob:
+    runs-on: windows-latest
+    steps:
+      - name: Hello 
+        run: echo "hello World"
