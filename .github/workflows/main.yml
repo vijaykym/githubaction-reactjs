@@ -1,5 +1,5 @@
 name: ReactJsWorkflow
-on: push
+on: [push, workflow_dispatch ]
 jobs:
   TestJob:
     runs-on: ubuntu-latest
