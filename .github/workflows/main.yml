@@ -29,5 +29,9 @@ jobs:
     - name: Creating and Pushing Docker Image
       run: | 
           docker build -t 381491873314.dkr.ecr.us-east-1.amazonaws.com/java_images:latest .
-          docker push 381491873314.dkr.ecr.us-east-1.amazonaws.com/java_images:latest  
+          docker push 381491873314.dkr.ecr.us-east-1.amazonaws.com/java_images:latest
+    - name: Update kube config
+      run: aws eks update-kubeconfig --name raghaveks --region ${{ secrets.AWS_REGION }}
+    - name: Deploy to eks
+      run: kubectl apply -f deploy.yml     
       
