@@ -26,4 +26,8 @@ jobs:
           registry: 381491873314.dkr.ecr.us-east-1.amazonaws.com
           username: ${{ secrets.AWS_ACCESS_KEY_ID }}
           password: ${{ secrets.AWS_SECRET_ACCESS_KEY }}    
+    - name: Creating and Pushing Docker Image
+      run: | 
+          docker build -t java_images:latest 381491873314.dkr.ecr.us-east-1.amazonaws.com/java_images:latest .
+          docker push java_images:latest 381491873314.dkr.ecr.us-east-1.amazonaws.com/java_images:latest  
       
