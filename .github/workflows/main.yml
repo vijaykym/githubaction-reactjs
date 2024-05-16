@@ -14,17 +14,4 @@ jobs:
       run: npm install
     - name: Creating the Build
       run: npm run build
-  Bulding:
-    needs: Testing
-    runs-on: ubuntu-latest
-    steps:
-    - name: Clone the repo
-      uses: actions/checkout@v4
-    - name: Install Node Js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 18
-    - name: Install Dependincies
-      run: npm install
-    - name: Creating the Build
-      run: npm run build
+      
